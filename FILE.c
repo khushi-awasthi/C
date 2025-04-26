@@ -12,7 +12,7 @@
 // printf("\nThe area  of circumference=%f",c);
 // return 0;
 // }
-// 2.Write a C Program to convert temperature from degree centigrade to Fahrenheit. 
+// 2.Write a C Program to convert temperature from degree centigrade to Fahrenheit.
 // #include<stdio.h>
 // int main(){
 //     float c,f;
@@ -53,19 +53,18 @@
 
 //    scanf("%d", &year);
 
-   
 //    if (year % 400 == 0) {
 //       printf("%d is a leap year.", year);
 //    }
-   
+
 //    else if (year % 100 == 0) {
 //       printf("%d is not a leap year.", year);
 //    }
-   
+
 //    else if (year % 4 == 0) {
 //       printf("%d is a leap year.", year);
 //    }
-   
+
 //    else {
 //       printf("%d is not a leap year.", year);
 //    }
@@ -144,12 +143,12 @@
 //     double sum = 0.0;  // Use double for accurate division results
 //     printf("Please enter a positive integer.\n");
 //     printf("Enter the value of n: ");
-    
+
 //     scanf("%d", &n);
 
 //     // Ensure n is positive
 //     if (n <= 0) {
-        
+
 //         return 1;
 //     }
 
@@ -174,13 +173,12 @@
 //     }
 // }
 
+
 // 11.	Write a C Program to print star sequence 2:
 //                  *
 //            *     *
 //      *     *     *
 // *    *     *     *
-
-
 
 /////////////////////////
 
@@ -206,9 +204,39 @@
 //     }
 //     return 0;
 // }
+// 12.........................
+// #include<stdio.h>
+// #include <stdio.h>
 
+// int main()
+// {
+//     int m = 3;
 
-// 
+//     for (int i = 1; i <= 4; i++)
+//     {
+
+//         if (i == 3)
+//         {
+//             m--;
+//             continue;
+//         }
+//         else
+//         {
+//             printf("\n");
+//             for (int k = 1; k <= m; k++)
+//             {
+//                 printf(" ");
+//             }
+//             for (int j = 1; j <= i; j++)
+//             {
+//                 printf("* ");
+//             }
+//         }
+//         m--;
+//     }
+// }
+
+//
 // 13.Write a C Program to find square of a number using functions.
 // #include<stdio.h>
 // int square(int);
@@ -216,7 +244,7 @@
 //     int a,b;
 //     printf("Enter a number");
 //     scanf("%d",&a);
-//     b=a*a;
+//     b=square(a);
 //     printf("The square is=%d",b);
 // }
 // int square(int c){
@@ -281,7 +309,7 @@
 //     for(i=0;i<10;i++)
 //     if(a[i]>=max)
 //     max=a[i];
-//     printf("\nmaximum number= %d",max); 
+//     printf("\nmaximum number= %d",max);
 // }
 // 18.	Write a C Program to sort an array.
 // #include<stdio.h>
@@ -305,89 +333,123 @@
 //     printf("the sorted array:");
 //     for(i=0;i<10;i++)
 //     printf("%d\t",a[i]);
-    
+
 // }
 // 21.
-#include <stdio.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
-// Function to dynamically allocate and use a 1D array
-void dynamic1DArray(int n) {
-    int *arr = (int *)malloc(n * sizeof(int));
-    if (arr == NULL) {
-        printf("Memory allocation failed for 1D array.\n");
-        return;
-    }
+// // Function to dynamically allocate and use a 1D array
+// void dynamic1DArray(int n) {
+//     int *arr = (int *)malloc(n * sizeof(int));
+//     if (arr == NULL) {
+//         printf("Memory allocation failed for 1D array.\n");
+//         return;
+//     }
 
-    printf("Enter %d elements for the 1D array:\n", n);
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+//     printf("Enter %d elements for the 1D array:\n", n);
+//     for (int i = 0; i < n; i++) {
+//         scanf("%d", &arr[i]);
+//     }
 
-    printf("1D Array elements are:\n");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+//     printf("1D Array elements are:\n");
+//     for (int i = 0; i < n; i++) {
+//         printf("%d ", arr[i]);
+//     }
+//     printf("\n");
 
-    free(arr); // Free the allocated memory
-}
+//     free(arr); // Free the allocated memory
+// }
 
-// Function to dynamically allocate and use a 2D array
-void dynamic2DArray(int rows, int cols) {
-    int **arr = (int **)malloc(rows * sizeof(int *));
-    if (arr == NULL) {
-        printf("Memory allocation failed for 2D array rows.\n");
-        return;
-    }
+// // Function to dynamically allocate and use a 2D array
+// void dynamic2DArray(int rows, int cols) {
+//     int **arr = (int **)malloc(rows * sizeof(int *));
+//     if (arr == NULL) {
+//         printf("Memory allocation failed for 2D array rows.\n");
+//         return;
+//     }
 
-    for (int i = 0; i < rows; i++) {
-        arr[i] = (int *)malloc(cols * sizeof(int));
-        if (arr[i] == NULL) {
-            printf("Memory allocation failed for 2D array columns.\n");
-            return;
-        }
-    }
+//     for (int i = 0; i < rows; i++) {
+//         arr[i] = (int *)malloc(cols * sizeof(int));
+//         if (arr[i] == NULL) {
+//             printf("Memory allocation failed for 2D array columns.\n");
+//             return;
+//         }
+//     }
 
-    printf("Enter elements for the 2D array (%dx%d):\n", rows, cols);
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            scanf("%d", &arr[i][j]);
-        }
-    }
+//     printf("Enter elements for the 2D array (%dx%d):\n", rows, cols);
+//     for (int i = 0; i < rows; i++) {
+//         for (int j = 0; j < cols; j++) {
+//             scanf("%d", &arr[i][j]);
+//         }
+//     }
 
-    printf("2D Array elements are:\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            printf("%d ", arr[i][j]);
-        }
-        printf("\n");
-    }
+//     printf("2D Array elements are:\n");
+//     for (int i = 0; i < rows; i++) {
+//         for (int j = 0; j < cols; j++) {
+//             printf("%d ", arr[i][j]);
+//         }
+//         printf("\n");
+//     }
 
-    // Free the allocated memory
-    for (int i = 0; i < rows; i++) {
-        free(arr[i]);
-    }
-    free(arr);
-}
+//     // Free the allocated memory
+//     for (int i = 0; i < rows; i++) {
+//         free(arr[i]);
+//     }
+//     free(arr);
+// }
 
-int main() {
-    int n, rows, cols;
+// int main() {
+//     int n, rows, cols;
 
-    // 1D Array
-    printf("Enter the size of the 1D array: ");
-    scanf("%d", &n);
-    dynamic1DArray(n);
+//     // 1D Array
+//     printf("Enter the size of the 1D array: ");
+//     scanf("%d", &n);
+//     dynamic1DArray(n);
 
-    // 2D Array
-    printf("Enter the number of rows and columns for the 2D array: ");
-    scanf("%d %d", &rows, &cols);
-    dynamic2DArray(rows, cols);
+//     // 2D Array
+//     printf("Enter the number of rows and columns for the 2D array: ");
+//     scanf("%d %d", &rows, &cols);
+//     dynamic2DArray(rows, cols);
 
-    return 0;
-}
+//     return 0;
+// }
+// program 23=============
+// #include<stdio.h>
+// int main(){
+//     FILE *p,*r;
+//     p=fopen("psit.txt","r+");
+//     r=fopen("psit2.txt","w+");
+//     char c;
+//     while(c=getc(p)!=EOF)
+//     putc(c,r);
+//     fclose(p);
+//     fclose(r);
 
+// }
+// #include <stdio.h>
+// struct students
+// {
+//     int rollno;
+//     char name[20];
+//     char branch[10];
+//     int marks;
 
-
-
-
+// } a[3];
+// int main()
+// {
+//     FILE *p;
+//     p = fopen("record.doc", "a+");
+//     int i;
+//     for (i = 0; i <= 3; i++)
+//     {
+//         printf("Enter the id, name, branch, marks");
+//         scanf("%d%s%s%d", &a[i].rollno, a[i].name, a[i].branch, &a[i].marks);
+//     }
+//     for (i = 0; i <= 3; i++)
+//     {
+//         printf("%d\t%s\t%s\t%d", a[i].rollno, a[i].name, a[i].branch, a[i].marks);
+//         fprintf(p, "%d\t%s\t%d\t%s", a[i].rollno, a[i].name, a[i].branch, a[i].marks);
+//     }
+//     fclose(p);
+// }

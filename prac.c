@@ -146,11 +146,60 @@
 //     printf("sum of first digit of number=%d",first+last);
 
 // }
-int main(){
-    int i,j;
-    for(i=1;i<5;i++){
-        printf("\n");
-         for(j=i;j<=5;j++)
-        printf("*");
-    }
+// int main(){
+//     int i,j;
+//     for(i=1;i<5;i++){
+//         printf("\n");
+//          for(j=i;j<=5;j++)
+//         printf("*");
+//     }
+// }
+
+// even // odd
+
+/** 
+ * C program to check even or odd using functions
+ */
+
+#include <stdio.h>
+
+
+/**
+ * Function to check even or odd
+ * Returns 1 is num is even otherwise 0
+ */
+// int isEven(int num)
+// {
+//     return !(num & 1);
+// }
+
+
+// int main()
+// {
+//     int num;
+    
+//     /* Input number from user */
+//     printf("Enter any number: ");
+//     scanf("%d", &num);
+    
+    
+//     /* If isEven() function returns 0 then the number is even */
+//     if(isEven(num))
+//     {
+//         printf("The number is even.");
+//     }
+//     else
+//     {
+//         printf("The number is odd.");
+//     }
+    
+//     return 0;
+// }
+
+void main(){
+    int a, b, *p;
+    a=10;
+    p=&a;
+    b=*p+20;
+    printf("%d",b);
 }

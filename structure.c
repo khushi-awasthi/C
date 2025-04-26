@@ -38,6 +38,7 @@
 //         printf("Enter the name");
 //         
 //         printf("Enter the city");
+
 //         scanf("%s",&a[i].city);
 //     }
 //     printf("Print the details\n");

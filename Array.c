@@ -114,6 +114,7 @@
 //     printf("Multiply \n");
 //     for(i=0;i<3;i++){
 //         printf("\n");
+        
 //         for(j=0;j<3;j++)
 //         printf("%d\t",c[i][j]);
 //     }
@@ -308,18 +309,18 @@
 //     printf("%d",*p);
 // }
 // swap array using pointer----------
-#include<stdio.h>
-void swap(int*,int*);
-int main(){
-    int a,b;
-    printf("Enter two numbers:");
-    scanf("%d%d",&a,&b);
-    swap(&a,&b);
-    printf("After swapping values are%d%d",a,b);
-}
-void swap(int*p,int*q){
-    int e;
-    e=*p;
-    *p=*q;
-    *q=e;
-}
+// #include<stdio.h>
+// void swap(int*,int*);
+// int main(){
+//     int a,b;
+//     printf("Enter two numbers:");
+//     scanf("%d%d",&a,&b);
+//     swap(&a,&b);
+//     printf("After swapping values are%d%d",a,b);
+// }
+// void swap(int*p,int*q){
+//     int e;
+//     e=*p;
+//     *p=*q;
+//     *q=e;
+// }
