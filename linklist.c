@@ -151,41 +151,139 @@ void delete_at_end(struct node**head_ref){
     }
 }
 
-void insert_at_specific(struct node** head_ref,int new_data,int position){
-    struct node* new_node=(struct node*)malloc(sizeof(struct node));
-    new_node->data=new_data;
-    new_node->next=NULL;
-    // if positon is 0
-    if(position<=0){
-        new_node->data=new_data;
-        new_node->next=*head_ref;
-        *head_ref=new_node;
+void insert_at_specific(struct node** head_ref, int new_data, int position) {
+    struct node* new_node = (struct node*)malloc(sizeof(struct node));
+    new_node->data = new_data;
+    new_node->next = NULL;
 
+    if (position <= 1 || *head_ref == NULL) {
+        // Insert at the beginning
+        new_node->next = *head_ref;
+        *head_ref = new_node;
+        return;
     }
-    struct node* current=*head_ref;
-    for(int i=0; i<position-1&&current!=NULL; i++){
-        current=current->next;
+
+    struct node* current = *head_ref;
+    for (int i = 1; i < position - 1 && current != NULL; i++) {
+        current = current->next;
     }
-    // if position is greater than length
-    if(current==NULL){
-        printf("Invalid position.inserting at the end");
-        current=*head_ref;
-        while(current->next!=NULL){
-            current=current->next;
+
+    if (current == NULL) {
+        // Position is out of bounds
+        printf("Invalid position. Inserting at the end.\n");
+        current = *head_ref;
+        while (current->next != NULL) {
+            current = current->next;
         }
-        current->next=new_node;
+        current->next = new_node;
+    } else {
+        // Normal case: insert at the given position
+        new_node->next = current->next;
+        current->next = new_node;
     }
 }
-void delete_at_specific(struct node** head_ref,int position){
-    if(position<=0){
-        printf("List is empty");
+
+
+// void insert_at_specific(struct node** head_ref,int new_data,int position){
+//     struct node* new_node=(struct node*)malloc(sizeof(struct node));
+//     new_node->data=new_data;
+//     new_node->next=NULL;
+//     // if positon is 0
+//     if(position<=0){
+//         new_node->data=new_data;
+//         new_node->next=*head_ref;
+//         *head_ref=new_node;
+
+//     }
+//     struct node* current=*head_ref;
+//     for(int i=0; i<position-1&&current!=NULL; i++){
+//         current=current->next;
+//     }
+//     // if position is greater than length
+//     if(current==NULL){
+//         printf("Invalid position.inserting at the end");
+//         current=*head_ref;
+//         while(current->next!=NULL){
+//             current=current->next;
+//         }
+//         current->next=new_node;
+//     }
+// }
+// void delete_at_specific(struct node** head_ref,int position){
+//     if(position<=0){
+//         printf("List is empty");
+//     }
+//     struct node* current=*head_ref;
+//     for(int i=0; i<position-1&&current!=NULL; i++){
+//         current=current->next;
+//      }
+//      free(current);
+// }
+
+// void delete_at_specific(struct node** head_ref, int position) {
+//     if (*head_ref == NULL) {
+//         printf("List is empty.\n");
+//         return;
+//     }
+//     struct node* current = *head_ref;
+//     if (position == 0) {
+//         *head_ref = current->next; // Move the head to the next node
+//         free(current); // Free the old head
+//         printf("Node at position %d deleted.\n", position);
+//         return;
+//     }
+//     // Traverse to the node just before the one to be deleted
+//     for (int i = 0; i < position - 1 && current != NULL; i++) {
+//         current = current->next;
+//     }
+//     if (current == NULL || current->next == NULL) {
+//         printf("Invalid position.\n");
+//         return;
+//     }
+//     struct node* temp = current->next;
+//     current->next = current->next->next; // Skip the node to delete
+//     free(temp); // Free the node
+//     printf("Node at position %d deleted.\n", position);
+// }
+
+
+void delete_at_specific(struct node** head_ref, int position) {
+    if (*head_ref == NULL) {
+        printf("List is empty.\n");
+        return;
     }
-    struct node* current=*head_ref;
-    for(int i=0; i<position-1&&current!=NULL; i++){
-        current=current->next;
-     }
-     free(current);
+
+    if (position <= 0) {
+        printf("Invalid position.\n");
+        return;
+    }
+
+    struct node* current = *head_ref;
+
+    // Delete the head node
+    if (position == 1) {
+        *head_ref = current->next;
+        printf("Node at position %d with value %d deleted.\n", position, current->data);
+        free(current);
+        return;
+    }
+
+    // Traverse to the node just before the one to delete
+    for (int i = 1; i < position - 1 && current != NULL; i++) {
+        current = current->next;
+    }
+
+    if (current == NULL || current->next == NULL) {
+        printf("Invalid position.\n");
+        return;
+    }
+
+    struct node* temp = current->next;
+    current->next = temp->next;
+    printf("Node at position %d with value %d deleted.\n", position, temp->data);
+    free(temp);
 }
+
 void counter(struct node* head){
     int count=0;
     while(head!=NULL){
