@@ -111,31 +111,31 @@
 //     }
 //         printf("Total words=%d",c+1);
     
-// int main(){
-//     char a[20];
-//     printf("Enter the string");
-//     gets(a);
-//     int i,j,f=0;
-//     i=0;
-//     while(a[i]!=NULL)
-//         i++;
-//         i=i-1;
-//         j=0;
-//     while(a[j]!=NULL){
-//         if(a[i]!=a[j]){
-//             f=1;
-//             break;
-//         }
-//             i--;
-//             j++;
+int main(){
+    char a[20];
+    printf("Enter the string");
+    gets(a);
+    int i,j,f=0;
+    i=0;
+    while(a[i]!=NULL)
+        i++;
+        i=i-1;
+        j=0;
+    while(a[j]!=NULL){
+        if(a[i]!=a[j]){
+            f=1;
+            break;
+        }
+            i--;
+            j++;
 
-//     }
-//     if(f==0)
-//         printf("Palindrome");
-//     else
-//         printf("Not palindrome");
+    }
+    if(f==0)
+        printf("Palindrome");
+    else
+        printf("Not palindrome");
 
-// }
+}
 // int main(){
 //     char a[20];
 //     int i,j,r;
@@ -155,22 +155,22 @@
 //     }
 //     printf("string is sorted=%s",a);
 // }
-#include<string.h>
-int main(){
-    char a[5][10];
-    int i,j;
-    printf("Enter five string");
-    for(i=0;i<5;i++)
-    gets(a[i]);
-    for(i=0;i<5;i++)
-    for(j=0;j<5-i-1;j++)
-    if(strcmp(a[j],a[j+1])>0){
-        char b[10];
-        strcpy (b,a[j]);
-        strcpy(a[j],a[j+1]);
-        strcpy(a[j+1],b);
-    }
-    printf("The sorted string is\n");
-    for(i=0;i<5;i++)
-    printf("\n%s",a[i]);
-}
+// #include<string.h>
+// int main(){
+//     char a[5][10];
+//     int i,j;
+//     printf("Enter five string");
+//     for(i=0;i<5;i++)
+//     gets(a[i]);
+//     for(i=0;i<5;i++)
+//     for(j=0;j<5-i-1;j++)
+//     if(strcmp(a[j],a[j+1])>0){
+//         char b[10];
+//         strcpy (b,a[j]);
+//         strcpy(a[j],a[j+1]);
+//         strcpy(a[j+1],b);
+//     }
+//     printf("The sorted string is\n");
+//     for(i=0;i<5;i++)
+//     printf("\n%s",a[i]);
+// }

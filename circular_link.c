@@ -109,7 +109,7 @@ void insert_at_end(struct node** head_ref,int new_data){
 void display(struct node* head){
     struct node* r=head;
     if(head==NULL){
-        printf("List is empty");
+        printf("List is empty\n");
         return;
     }
 
@@ -201,10 +201,6 @@ void delete_at_end(struct node** head_ref){
             
 //         }
         
-    
-
-
-
 void insert_at_specific(struct node** head_ref, int new_data, int pos) {
     struct node* new_node = (struct node*)malloc(sizeof(struct node));
     new_node->data = new_data;
@@ -221,9 +217,9 @@ void insert_at_specific(struct node** head_ref, int new_data, int pos) {
         struct node* temp = *head_ref;
 
         // Traverse to the last node
-        while (temp->next != *head_ref)
+        while (temp->next != *head_ref){
             temp = temp->next;
-
+        }
         temp->next = new_node;
         new_node->next = *head_ref;
         *head_ref = new_node;
@@ -244,25 +240,27 @@ void delete_at_specific(struct node** head_ref,int pos){
         printf("List is empty");
         return;
     }
-    struct node* move=*head_ref;
+    struct node* move = *head_ref;
     // only one node
     if(move->next == move && pos == 1){
         free(move);
         *head_ref = NULL;
         return;
     }
+    // Delete at position 1(head node)
     if(pos==1){
         struct node* last = *head_ref;
         while (last->next != *head_ref) {
             last = last->next;
         }
-        last->next = (*head_ref)->next;
-        move = *head_ref;
-        *head_ref = (*head_ref)->next;
-        free(move);
-        return; 
+        
+        struct node* temp = *head_ref;
+        last->next = temp->next;
+        *head_ref = temp->next;
+        free(temp);
+        return;
     }
-    for(int i=1; i<pos-1 && move->next != *head_ref; i++){
+    for(int i=1; i<pos-1 ; i++){
         move=move->next;
         if (move->next == *head_ref) {
             printf("Position out of range\n");
